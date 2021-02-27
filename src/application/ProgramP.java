@@ -64,7 +64,7 @@ public class ProgramP {
 		
 		for(PessoaP x: list) {
 				Double total = x.calcularImposto();
-				System.out.println(" $ "+String.format("%.2f", x));
+				System.out.println(x.getNomePessoa()+" $ "+ String.format("%.2f", x.calcularImposto()));
 				sum+=total;
 			}
 		System.out.println();
