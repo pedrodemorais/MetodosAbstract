@@ -1,6 +1,6 @@
 package entities;
 
-public class PessoaFisicaP extends PessoaP {
+public class PessoaFisicaP extends ContribuinteP {
 
 	private Double gastoSaude;
 

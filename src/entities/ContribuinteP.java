@@ -1,15 +1,15 @@
 package entities;
 
-public abstract class PessoaP {
+public abstract class ContribuinteP {
 	private String nomePessoa;
 	private Double rendaAnual;
 	protected Double valorImposto;
 
-	public PessoaP() {
+	public ContribuinteP() {
 
 	}
 
-	public PessoaP(String nomePessoa, Double rendaAnual) {
+	public ContribuinteP(String nomePessoa, Double rendaAnual) {
 		this.nomePessoa = nomePessoa;
 		this.rendaAnual = rendaAnual;
 	}

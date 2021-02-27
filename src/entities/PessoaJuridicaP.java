@@ -1,6 +1,6 @@
 package entities;
 
-public class PessoaJuridicaP extends PessoaP {
+public class PessoaJuridicaP extends ContribuinteP {
 
 	private int numeroDeFuncionarios;
 

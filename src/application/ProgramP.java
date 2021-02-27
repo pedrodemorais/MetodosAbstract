@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import entities.PessoaFisicaP;
 import entities.PessoaJuridicaP;
-import entities.PessoaP;
+import entities.ContribuinteP;
 
 public class ProgramP {
 
@@ -15,7 +15,7 @@ public class ProgramP {
 		Locale.setDefault(Locale.US);
 		Scanner input = new Scanner(System.in);
 
-		List<PessoaP> list = new ArrayList<>();
+		List<ContribuinteP> list = new ArrayList<>();
 		int numOfPayers;
 		int NumberOfEmployees;
 		char pjOurPf;
@@ -43,13 +43,13 @@ public class ProgramP {
 				
 				System.out.print("Health expenditures: ");
 				HealthExpenditures = input.nextDouble();
-				PessoaP pessoa = new PessoaFisicaP(namePessoa, anualIncome, HealthExpenditures);
+				ContribuinteP pessoa = new PessoaFisicaP(namePessoa, anualIncome, HealthExpenditures);
 				list.add(pessoa);
 
 			} else if (pjOurPf == 'c') {
 				System.out.print("Number of employees: ");
 				NumberOfEmployees = input.nextInt();
-				PessoaP pessoa = new PessoaJuridicaP(namePessoa, anualIncome, NumberOfEmployees);	
+				ContribuinteP pessoa = new PessoaJuridicaP(namePessoa, anualIncome, NumberOfEmployees);	
 				list.add(pessoa);
 				
 						} else
@@ -59,14 +59,19 @@ public class ProgramP {
 		}
 
 		
-		Double sum=0.0;		
 		System.out.println("TAXES PAID:");
 		
-		for(PessoaP x: list) {
-				Double total = x.calcularImposto();
+		for(ContribuinteP x: list) {
+				
 				System.out.println(x.getNomePessoa()+" $ "+ String.format("%.2f", x.calcularImposto()));
-				sum+=total;
 			}
+		
+		Double sum=0.0;		
+		for(ContribuinteP x: list) {
+			Double total = x.calcularImposto();
+			sum+=total;
+			
+		}
 		System.out.println();
 		System.out.println("TOTAL TAXES: $ " + String.format("%.2f", sum));
 		input.close();
